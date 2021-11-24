@@ -1,4 +1,4 @@
-## Codeigniter 4 con Blade y Material Design 2
+## Codeigniter 4 con Blade Template y Material Design 2
 
 El objetivo de este repositorio es enseñarle como puede agregar soporte de **Blade** a
 un proyecto de **Codeigniter 4**
