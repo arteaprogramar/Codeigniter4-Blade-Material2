@@ -1,0 +1,8 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('m-page_title', 'Titulo de Pestaña'); ?>
+<?php $this->startSection('m-toolbar_title', 'Toolbar Title'); ?>
+<?php $this->startSection('m-toolbar_elevation', 'shadow-2'); ?>
+<?php $this->startSection('m-toolbar_color', 'blue-grey darken-1'); ?>
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('v1.templates.material-toolbar'); } ?>
