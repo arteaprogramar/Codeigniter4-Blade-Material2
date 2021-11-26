@@ -20,54 +20,6 @@
     @yield('m-css-extras')
 </head>
 <body>
-
-    <!--
-        m-toolbar_elevation : define elevation
-        m-toolbar_color: define toolbar background color
-    -->
-    <header class="navbar navbar-dark fixed-top toolbar-waterfall @yield('m-toolbar_elevation')">
-
-        <!-- m-toolbar_button_back:
-            If m-toolbar_button_back has been called, then the back button will be shown, otherwise the Navbar button will be shown
-        -->
-        @if(!@empty(trim($this->yieldContent('m-toolbar_button_back'))))
-
-            <!-- m-toolbar_back_url: define url previous -->
-            <a href="@yield('m-toolbar_back_url')" class="btn btn-icon btn-sm @yield('m-toolbar_button_back_color')">
-                <span class="material-icons-outlined">arrow_back</span>
-            </a>
-
-        @else
-
-            @if(!@empty(trim($this->yieldContent('m-toolbar_button_navdrawer'))))
-                <button aria-controls="nav" aria-expanded="false" aria-label="tn" class="navbar-toggler" data-target="#nav" data-toggle="navdrawer">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            @endif
-
-        @endif
-
-        <!-- m-toolbar_title : define toolbar title -->
-        <span class="navbar-brand mr-auto">@yield('m-toolbar_title')</span>
-        <div class="ml-3">
-
-            <!-- m-toolbar_menu : define menus -->
-            @yield('m-toolbar_menu')
-
-        </div>
-    </header>
-    <div aria-hidden="true" class="navdrawer" id="nav" tabindex="-1">
-
-        <!-- m-navdrawer: create NavDrawer view -->
-        @yield('m-navdrawer')
-
-    </div>
-
-    <!--
-        toolbar_collapse_img : Toolbar background img
-        toolbar_collapse_color : Toolbar background color
-        toolbar_collapse_content: Require view content or text
-    -->
     <style>
         .jumbotron-background {
             @if(!@empty(trim($this->yieldContent('m-toolbar_collapse_img'))))
@@ -85,7 +37,38 @@
         }
     </style>
 
-    <div class="jumbotron jumbotron-fluid jumbotron-background mb-5 @yield('m-toolbar_color')">
+    <!--
+        m-toolbar_elevation : define elevation
+        m-toolbar_color: define toolbar background color
+    -->
+    <header class="navbar navbar-dark material-navbar-permanent fixed-top toolbar-waterfall">
+        <button data-breakpoint="lg" aria-controls="nav" aria-expanded="false" aria-label="Toggle Navdrawer" class="navbar-toggler" data-target="#nav" data-toggle="navdrawer" data-type="permanent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- m-toolbar_title : define toolbar title -->
+        <span class="navbar-brand mr-auto">@yield('m-toolbar_title')</span>
+        <div class="ml-3">
+
+            <!-- m-toolbar_menu : define menus -->
+            @yield('m-toolbar_menu')
+
+        </div>
+    </header>
+
+    <div aria-hidden="true" class="navdrawer navdrawer-permanent-lg" data-type="persistent" id="nav" tabindex="-1">
+        <!-- m-navdrawer: create NavDrawer view -->
+        @yield('m-navdrawer')
+    </div>
+
+    <!--
+        toolbar_collapse_img : Toolbar background img
+        toolbar_color : Toolbar background color
+        toolbar_collapse_content: Require view content or text
+    -->
+
+
+    <div class="jumbotron jumbotron-fluid jumbotron-background material-jumbotron px-lg-3 mb-5 @yield('m-toolbar_color')">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-xl-8">
@@ -96,14 +79,14 @@
     </div>
 
     <!-- Content -->
-    <div style="padding-top: 1rem; display: block">
+    <main class="px-md-3 material-main">
         <div class="container">
 
             <!-- m-content: require view or text, this is page content -->
             @yield('content')
 
         </div>
-    </div>
+    </main>
 
     <!-- jQuery, Bootstrap Bundle (includes Popper) and Material -->
     <script type="application/javascript" src="{{js_url('material/jquery.min.js')}}"></script>

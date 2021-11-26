@@ -2184,3 +2184,99 @@ b {
     border-color: #b00020  !important;
     padding-right: 0  !important
 }
+
+
+/**
+ * NavDrawe
+ */
+.material-jumbotron{
+    background-color:#6200ee;
+    background-image:url(../images/material-jumbotron-bg.jpg);
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+    background-size:cover;
+    color:#fff;
+    margin-bottom:0;
+    padding-top:7rem
+}
+@media (max-width:767.98px){
+    .material-jumbotron h1{
+        font-size:3rem;
+        font-weight:400;
+        letter-spacing:0;
+        line-height:3.125rem
+    }
+}
+@media (min-width:992px){
+    .navdrawer-permanent-lg~.material-jumbotron{
+        margin-left:16rem
+    }
+}
+.material-jumbotron h1:last-child,.material-jumbotron p:last-child{
+    margin-bottom:0
+}
+.material-main{
+    padding-top:1rem
+}
+@media (min-width:992px){
+    .navdrawer-permanent-lg~.material-main{
+        margin-left:16rem;
+    }
+}
+
+@media (min-width:992px){
+    .material-navbar-permanent{
+        margin-left:16rem
+    }
+}
+
+.material-navbar-persistent,.material-navbar-temporary{
+    transition-duration:195ms;
+    transition-property:margin-left;
+    transition-timing-function:cubic-bezier(.4,0,.6,1)
+}
+@media (min-width:576px){
+    .material-navbar-persistent,.material-navbar-temporary{
+        transition-duration:.2535s
+    }
+}
+@media (min-width:992px){
+    .material-navbar-persistent,.material-navbar-temporary{
+        transition-duration:75ms
+    }
+}
+.navdrawer-open-persistent .material-navbar-persistent{
+    margin-left:16rem;
+    transition-duration:225ms;
+    transition-property:margin-left;
+    transition-timing-function:cubic-bezier(0,0,.2,1)
+}
+@media (min-width:576px){
+    .navdrawer-open-persistent .material-navbar-persistent{
+        transition-duration:.2925s
+    }
+}
+@media (min-width:992px){
+    .navdrawer-open-persistent .material-navbar-persistent{
+        transition-duration:.15s
+    }
+}
+.navdrawer-open-temporary .material-navbar-temporary{
+    margin-left:16rem;
+    transition-duration:225ms;
+    transition-property:margin-left;
+    transition-timing-function:cubic-bezier(0,0,.2,1)
+}
+@media (min-width:576px){
+    .navdrawer-open-temporary .material-navbar-temporary{
+        transition-duration:.2925s
+    }
+}
+@media (min-width:992px){
+    .navdrawer-open-temporary .material-navbar-temporary{
+        transition-duration:.15s
+    }
+}
+.material-navdrawer-body{
+    min-height:100%
+}
